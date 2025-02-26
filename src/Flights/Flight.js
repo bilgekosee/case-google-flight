@@ -16,6 +16,7 @@ const Flight = () => {
   const [error, setError] = useState("");
   const [animationData, setAnimationData] = useState(null);
   const [airplane, setAirplane] = useState(null);
+  const API_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 
   useEffect(() => {
     fetch("/animation.json")
@@ -43,8 +44,7 @@ const Flight = () => {
         {
           params: { query: iataCode },
           headers: {
-            "x-rapidapi-key":
-              "5170209b86msh9c455ea869b4e68p13c3adjsne7e58f993a81",
+            "x-rapidapi-key": API_KEY,
             "x-rapidapi-host": "sky-scrapper.p.rapidapi.com",
           },
         }
