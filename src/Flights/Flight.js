@@ -260,9 +260,9 @@ const Flight = () => {
             return (
               <li
                 key={index}
-                className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700 flex justify-between items-center"
+                className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700 flex justify-between items-center mb-10 mt-10"
               >
-                <div>
+                <div className="sm:max-w-full max-w-[150px]">
                   <p className="text-xl font-bold">
                     {new Date(leg.departure).toLocaleTimeString([], {
                       hour: "2-digit",
@@ -274,17 +274,19 @@ const Flight = () => {
                       minute: "2-digit",
                     })}
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-white">
                     {originName} - {destinationName}
                   </p>
-                  <p className="text-gray-500">{stopText}</p>
+                  <p className="text-gray-500 dark:text-gray-900">{stopText}</p>
                 </div>
-                <div className="text-right">
+                <div className="sm:text-right text-center">
                   <p className="font-bold text-lg">{price} USD</p>
-                  <p className="text-gray-500">{durationText}</p>
+                  <p className="text-gray-500 dark:text-gray-900">
+                    {durationText}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="sm:flex items-center gap-2 sm:max-w-full max-w-[105px]  text-right">
                   {airlineLogo && (
                     <img
                       src={airlineLogo}
@@ -292,7 +294,7 @@ const Flight = () => {
                       className="w-8 h-8 object-contain"
                     />
                   )}
-                  <p className="text-sm text-gray-700 dark:text-white">
+                  <p className="text-sm text-center text-gray-700 dark:text-white">
                     {airline}
                   </p>
                 </div>
